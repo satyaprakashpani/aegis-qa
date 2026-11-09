@@ -39,6 +39,24 @@ The name suits an autonomous quality system because AEGIS is intended to provide
 
 I started with standalone learning projects covering LLM basics and prompt engineering, then explored Claude skills such as a test-plan creator and an API response validator. I’m bringing those experiments together into AEGIS: a framework for applying agentic workflows to software quality.
 
+## Prompt Engineering: RICEPOT Method
+
+RICEPOT is a structured prompt format explored as implemented learning work; it is not part of the planned AEGIS framework.
+
+| Part | Purpose |
+|---|---|
+| **R — Role** | Who the AI acts as |
+| **I — Instructions** | The task and mandatory or forbidden rules |
+| **C — Context** | The application and environment |
+| **E — Example** | A structure-only sample of the expected code |
+| **P — Parameters** | Configuration, dependencies, and constraints |
+| **O — Output** | Exactly what to return and in what format |
+| **T — Tone** | The style of the response |
+
+A safety and anti-hallucination block at the end prohibits invented selectors or messages, requires each assertion to be traceable to the reference file, and reports missing information instead of guessing. In practice, the prompt guides GitHub Copilot in Agent mode to generate a Playwright + TypeScript project for the Wingify login page, using a separate file of captured element HTML as its only source of truth.
+
+The project demonstrates the Page Object Model, Allure reporting, review of existing files before generation, and a deterministic self-healing locator utility with ordered fallback locators. Each heal is reported, and assertions are never healed. This rule-based healing is a precursor to the agentic self-healing planned for AEGIS. The prompt, reference folder, and generated project are in `Prompt-Engineering/RICEPOT/`.
+
 ## Features
 
 - **Planned** — Autonomous generation of Playwright end-to-end tests.
@@ -69,6 +87,7 @@ flowchart LR
 
 ## Roadmap
 
+- [x] **Done:** Explored structured prompting (RICEPOT) to generate a Playwright project with Allure reporting and rule-based self-healing locators.
 - [ ] **Planned:** Define the framework interfaces and connect the standalone learning work.
 - [ ] **Planned:** Generate Playwright tests from test plans and application context.
 - [ ] **Planned:** Add failure analysis and self-healing test execution.
