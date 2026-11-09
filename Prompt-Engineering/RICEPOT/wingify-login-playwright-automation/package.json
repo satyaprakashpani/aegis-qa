@@ -1,0 +1,21 @@
+{
+  "name": "wingify-login-playwright-automation",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:strict": "cross-env HEAL_MODE=strict playwright test",
+    "report:generate": "allure generate allure-results --clean -o allure-report",
+    "report:open": "allure open allure-report"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^22.10.2",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.14.0",
+    "cross-env": "^7.0.0",
+    "dotenv": "^18.0.10",
+    "typescript": "^7.0.2"
+  }
+}
