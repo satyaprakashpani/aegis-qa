@@ -102,4 +102,4 @@ The core framework is planned around TypeScript, Playwright, LangChain, LangGrap
 
 - **Name:** Satyaprakash Pani
 - **LinkedIn:** www.linkedin.com/in/satyaprakaashpani
-- **GitHub:** [Your GitHub profile](https://github.com/your-username)
+- **GitHub:** https://github.com/satyaprakashpani/aegis-qa
